@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.application.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  project: {{ .Values.project.name }}
+  source:
+    repoURL: https://github.com/ArgTang/hometest.git
+    targetRevision: {{ .Values.application.gitbranch }}
+    path: deployment/argocd
+
+    helm:
+      version: v3
+      # Release name override (defaults to application name)
+      # releaseName: guestbook
+      valueFiles:
+      - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ .Release.Namespace }}
+
+  # Sync policy
+  syncPolicy:
+    automated:
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).

@@ -1,0 +1,6 @@
+project:
+  name: argo
+
+application:
+  name: argo
+  gitbtanch: main
