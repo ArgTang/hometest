@@ -11,7 +11,7 @@ spec:
     path: deployment/grafana/deploy
     repoURL: 'https://github.com/ArgTang/hometest'
     targetRevision: HEAD
-  project: argotest
+  project: default
   helm:
     version: v3
   syncPolicy:

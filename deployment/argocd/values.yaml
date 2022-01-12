@@ -1,6 +1,5 @@
 argocd:
-  config:
-    
+
   server:
     extraArgs:
     - --insecure
