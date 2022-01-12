@@ -1,3 +1,4 @@
 Push-Location $PSScriptRoot
 
-helm install argodef . --namespace argocd
+helm upgrade --install argodef . --namespace argocd
+

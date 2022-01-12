@@ -1,0 +1,9 @@
+apiVersion: v2
+name: argotesting
+
+version: 0.1.0
+
+dependencies:
+  - name: grafana
+    version: 7.6.1
+    repository: https://argotesting.azurecr.io/helm/v1/repo
